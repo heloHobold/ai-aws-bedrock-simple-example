@@ -17,7 +17,8 @@ class ConfigAWS {
         override suspend fun resolve(attributes: Attributes): Credentials {
             return Credentials(
                 accessKeyId = System.getenv("AWS_ACCESS_KEY_ID") ?: "",
-                secretAccessKey = System.getenv("AWS_SECRET_ACCESS_KEY") ?: ""
+                secretAccessKey = System.getenv("AWS_SECRET_ACCESS_KEY") ?: "",
+                sessionToken = System.getenv("AWS_SESSION_TOKEN") ?: ""
             )
         }
     }
